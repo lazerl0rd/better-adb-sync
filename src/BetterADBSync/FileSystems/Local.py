@@ -50,5 +50,5 @@ class LocalFileSystem(FileSystem):
                 "stdout": subprocess.DEVNULL,
                 "stderr": subprocess.DEVNULL
             }
-        if subprocess.call(self.adb_arguments + ["pull", source, destination], **kwargs_call):
+        if subprocess.call(self.adb_arguments + ["pull  -a -Z", source, destination], **kwargs_call):
             logging_fatal("Non-zero exit code from adb pull")

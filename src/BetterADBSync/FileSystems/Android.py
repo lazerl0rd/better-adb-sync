@@ -215,5 +215,5 @@ class AndroidFileSystem(FileSystem):
                 "stdout": subprocess.DEVNULL,
                 "stderr": subprocess.DEVNULL
             }
-        if subprocess.call(self.adb_arguments + ["push", source, destination], **kwargs_call):
+        if subprocess.call(self.adb_arguments + ["push -Z", source, destination], **kwargs_call):
             logging_fatal("Non-zero exit code from adb push")
